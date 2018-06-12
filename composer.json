@@ -1,0 +1,29 @@
+{
+    "name": "access-manager/access-manager",
+    "description": "The Hotspot Management System",
+    "keywords": ["access manager","wifi", "hotspot", "mikrotik"],
+    "license": "MIT",
+    "type": "project",
+    "homepage": "http://accessmanager.in",
+    "require": {
+        "php": ">=5.6.4",
+        "access-manager/base": "3.*"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+      "post-autoload-dump": [
+        "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump"
+      ]
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
